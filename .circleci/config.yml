@@ -10,8 +10,8 @@
     steps:
       - checkout
      steps:
-       - checkout
-       - run: dotnet restore
-       - run: dotnet build
-       - run: dotnet test
+      - checkout
+      - run: dotnet restore
+      - run: dotnet build
+      - run: dotnet test
        
