@@ -1,0 +1,17 @@
+ version: 2.1
+
+ orbs:
+  win: circleci/windows@2.2.0
+
+ jobs:
+   test:    
+    executor:
+      name: windows/default
+    steps:
+      - checkout
+     steps:
+       - checkout
+       - run: dotnet restore
+       - run: dotnet build
+       - run: dotnet test
+       
