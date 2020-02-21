@@ -1,3 +1,6 @@
+
+[![n](https://img.shields.io/nuget/v/Scott.Dates.Recurring)](https://www.nuget.org/packages/Scott.Dates.Recurring/) | ![l](https://img.shields.io/github/license/jogai/Dates.Recurring) | ![d](https://img.shields.io/nuget/dt/Scott.Dates.Recurring) | ![c](https://circleci.com/gh/circleci/circleci-docs.svg?style=shield) | ![p](https://github.com/Jogai/Dates.Recurring/workflows/Scott%20Dates%20Recurring%20-%20Deploy/badge.svg)
+
 # Scott.Dates.Recurring
 
 Library for working with recurring dates in a fluent syntax
@@ -35,7 +38,3 @@ var weekly = RuleBuilder
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
-
-| Badges                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------- |
-| [![n](https://img.shields.io/nuget/v/Scott.Dates.Recurring)](https://www.nuget.org/packages/Scott.Dates.Recurring/) | ![l](https://img.shields.io/github/license/jogai/Dates.Recurring) | ![d](https://img.shields.io/nuget/dt/Scott.Dates.Recurring) | ![c](https://circleci.com/gh/circleci/circleci-docs.svg?style=shield) | ![p](https://github.com/Jogai/Dates.Recurring/workflows/Scott%20Dates%20Recurring%20-%20Deploy/badge.svg) |

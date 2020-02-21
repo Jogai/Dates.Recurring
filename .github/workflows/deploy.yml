@@ -25,7 +25,7 @@ jobs:
         working-directory: ./src
 
       - name: Generate nuget package
-        run: dotnet pack --configuration Release -o nupkg
+        run: dotnet pack --configuration Release -o ./src/nupkg
         working-directory: ./src
 
       - name: Publish nuget package
