@@ -14,14 +14,16 @@ namespace Scott.Dates.Recurring
         public Rule BuildRule(Rule rule)
         {
             var days = (rule.Until - rule.Start).Days + 1;
-            if (days % 2 > 0)
-                days++;
             //Divide days by the interval to know the number of occurences
-            var occurences = days / rule.Interval;
+            var occurrences = days / rule.Interval;
+            if (days % rule.Interval > 0)
+            {
+                occurrences++;
+            }
             //Generate all the days
-            var daily = Enumerable.Range(0, occurences)
-                .Select(x => rule.Start.AddDays(x * rule.Interval))
-                .Where(x => x <= rule.Until);
+            var daily = Enumerable.Range(0, occurrences)
+            .Select(x => rule.Start.AddDays(x * rule.Interval))
+            .Where(x => x <= rule.Until);
             //Apply filter for days or months
             if (rule.Days != 0 || rule.Months != 0)
             {

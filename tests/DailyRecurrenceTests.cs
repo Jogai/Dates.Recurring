@@ -1,5 +1,6 @@
 ﻿using Scott.Dates.Recurring;
 using System;
+using System.Linq;
 using NUnit.Framework;
 
 /*Taken inspiration for tests from gavynriebau/Dates.Recurring */
@@ -21,6 +22,35 @@ namespace Scott.Dates.Recurring.Tests
             Assert.AreEqual(new DateTime(2015, 1, 2), daily.Next(new DateTime(2015, 1, 1)));
             Assert.AreEqual(new DateTime(2015, 1, 3), daily.Next(new DateTime(2015, 1, 2)));
             //Assert.IsNull(daily.Next(new DateTime(2015, 1, 15)));
+        }
+
+        [Test]
+        public void Daily_Every7thDay()
+        {
+            var daily = RuleBuilder
+                .Every(7)
+                .Days()
+                .Starting(new DateTime(2020, 9, 7))
+                .Ending(new DateTime(2020, 9, 30))
+                .Build();
+
+            Assert.AreEqual(new DateTime(2020, 9, 7), daily.Sequence.First());
+            Assert.AreEqual(new DateTime(2020, 9, 28), daily.Sequence.Last());
+        }
+
+        [Test]
+        public void Daily_Every8thDay()
+        {
+            var daily = RuleBuilder
+                .Every(8)
+                .Days()
+                .Starting(new DateTime(2020, 9, 5))
+                .Ending(new DateTime(2020, 9, 30))
+                .Build();
+
+            Assert.AreEqual(new DateTime(2020, 9, 5), daily.Sequence.First());
+            Assert.AreEqual(new DateTime(2020, 9, 29), daily.Sequence.Last());
+            Assert.AreEqual(4, daily.Sequence.Count());
         }
 
         [Test]
